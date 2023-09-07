@@ -1,12 +1,12 @@
-package br.edu.unifio.projetojakarta;
+package controladorExercicio2;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProjetoJakartaApplication {
+public class CadastroApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProjetoJakartaApplication.class, args);
+        SpringApplication.run(CadastroApplication.class, args);
     }
-
 }

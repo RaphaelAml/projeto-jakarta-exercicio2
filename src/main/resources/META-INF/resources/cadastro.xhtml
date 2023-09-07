@@ -10,7 +10,7 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <h:head>
-    Cadastro
+  <title>Cadastro</title>
 </h:head>
 
 <h:body>
@@ -24,17 +24,32 @@
             <h:panelGrid columns="2">
 
                 <p:outputLabel value="Código"/>
-                <p:inputText size="20" maxlength="5" value=""
+                <p:inputText size="20" maxlength="5" value="#{cadastroControlador.pessoa.codigo}"
                 required="true"
                 requiredMessage="Campo do código obrigatorio preenchimento"
                 converterMessage="Informar somente numero no campo código"/>
 
+                <p:outputLabel value="Nome"/>
+                <p:inputText size="20" maxlength="50" value="#{cadastroControlador.pessoa.nome}"
+                required="true"
+                requiredMessage="Campo nome obrigatorio preenchimento"
+                converterMessage="Informar somente letras nesse campo"/>
 
+                <p:outputLabel value="CPF"/>
+                <p:inputText size="20" maxlength="50" value="#{cadastroControlador.pessoa.cpf}"
+                required="true"
+                requiredMessage="Campo CPF obrigatorio preenchimento"
+                converterMessage="Informar somente numeros nesse campo"/>
 
+                <p:outputLabel value="Data de Nascimento"/>
+                <p:inputText size="20" maxlength="50" value="#{cadastroControlador.pessoa.dataNasc}"
+                required="true"
+                requiredMessage="Campo Data de Nascimento obrigatorio preenchimento"
+                converterMessage="Informar somente numeros nesse campo"/>
+            </h:panelGrid>
 
-
-
-
+            <h:panelGrid columns="1">
+                <p:commandButton value="Salvar" actionListener="#{cadastroControlador.salvar()}" update="mensagem"/>
             </h:panelGrid>
 
 
