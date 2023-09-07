@@ -10,50 +10,112 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <h:head>
-  <title>Cadastro</title>
+    <title>Cadastro</title>
 </h:head>
 
 <h:body>
 
     <h:form>
 
-        <p:panel  header="Cadastro de Usuario">
+        <p:messages id="mensagem" closable="true"/>
 
-            <p:messages id="mensagem" closable="true"/>
+        <div class="card">
+            <p:splitter style="height: 300px" styleClass="mb-5">
+                <p:splitterPanel styleClass="flex align-items-center justify-content-center">
 
-            <h:panelGrid columns="2">
-
-                <p:outputLabel value="Código"/>
-                <p:inputText size="20" maxlength="5" value="#{cadastroControlador.pessoa.codigo}"
-                required="true"
-                requiredMessage="Campo do código obrigatorio preenchimento"
-                converterMessage="Informar somente numero no campo código"/>
-
-                <p:outputLabel value="Nome"/>
-                <p:inputText size="20" maxlength="50" value="#{cadastroControlador.pessoa.nome}"
-                required="true"
-                requiredMessage="Campo nome obrigatorio preenchimento"
-                converterMessage="Informar somente letras nesse campo"/>
-
-                <p:outputLabel value="CPF"/>
-                <p:inputText size="20" maxlength="50" value="#{cadastroControlador.pessoa.cpf}"
-                required="true"
-                requiredMessage="Campo CPF obrigatorio preenchimento"
-                converterMessage="Informar somente numeros nesse campo"/>
-
-                <p:outputLabel value="Data de Nascimento"/>
-                <p:inputText size="20" maxlength="50" value="#{cadastroControlador.pessoa.dataNasc}"
-                required="true"
-                requiredMessage="Campo Data de Nascimento obrigatorio preenchimento"
-                converterMessage="Informar somente numeros nesse campo"/>
-            </h:panelGrid>
-
-            <h:panelGrid columns="1">
-                <p:commandButton value="Salvar" actionListener="#{cadastroControlador.salvar()}" update="mensagem"/>
-            </h:panelGrid>
+                    <p:panel header="Cadastro de Usuario">
 
 
-        </p:panel>
+
+                        <h:panelGrid columns="2">
+
+                            <p:outputLabel value="Código"/>
+                            <p:inputText size="20" maxlength="5" value="#{cadastroControlador.pessoa.codigo}"
+                                         required="true"
+                                         requiredMessage="Campo do código obrigatorio preenchimento"
+                                         converterMessage="Informar somente numero no campo código"/>
+
+                            <p:outputLabel value="Nome"/>
+                            <p:inputText size="20" maxlength="50" value="#{cadastroControlador.pessoa.nome}"
+                                         required="true"
+                                         requiredMessage="Campo nome obrigatorio preenchimento"
+                                         converterMessage="Informar somente letras nesse campo"/>
+
+                            <p:outputLabel value="CPF"/>
+                            <p:inputText size="20" maxlength="50" value="#{cadastroControlador.pessoa.cpf}"
+                                         required="true"
+                                         requiredMessage="Campo CPF obrigatorio preenchimento"
+                                         converterMessage="Informar somente numeros nesse campo"/>
+
+                            <p:outputLabel value="Data de Nascimento"/>
+                            <p:inputText size="20" maxlength="50" value="#{cadastroControlador.pessoa.dataNasc}"
+                                         required="true"
+                                         requiredMessage="Campo Data de Nascimento obrigatorio preenchimento"
+                                         converterMessage="Informar somente numeros nesse campo"/>
+                        </h:panelGrid>
+                    </p:panel>
+
+                </p:splitterPanel>
+                <p:splitterPanel styleClass="flex align-items-center justify-content-center">
+
+                    <p:panel header="Endereço">
+
+
+                        <h:panelGrid columns="2">
+
+                            <p:outputLabel value="Rua"/>
+                            <p:inputText size="20" maxlength="5" value="#{cadastroControlador.endereco.rua}"
+                                         required="true"
+                                         requiredMessage="Campo rua obrigatorio preenchimento"
+                                         converterMessage="Informar somente letras nesse campo"/>
+
+                            <p:outputLabel value="Numero"/>
+                            <p:inputText size="20" maxlength="10" value="#{cadastroControlador.endereco.numero}"
+                                         required="true"
+                                         requiredMessage="Campo numero da rua obrigatorio preenchimento"
+                                         converterMessage="Informar somente numeros nesse campo"/>
+
+                            <p:outputLabel value="Bairro"/>
+                            <p:inputText size="20" maxlength="30" value="#{cadastroControlador.endereco.bairro}"
+                                         required="true"
+                                         requiredMessage="Campo bairro obrigatorio preenchimento"
+                                         converterMessage=""/>
+
+                            <p:outputLabel value="Cidade"/>
+                            <p:inputText size="20" maxlength="40" value="#{cadastroControlador.endereco.cidade}"
+                                         required="true"
+                                         requiredMessage="Campo cidade obrigatorio preenchimento"
+                                         converterMessage="Informar somente letras no campo"/>
+
+                            <p:outputLabel value="UF"/>
+                            <p:inputText size="20" maxlength="15" value="#{cadastroControlador.endereco.uf}"
+                                         required="true"
+                                         requiredMessage="Campo UF obrigatorio preenchimento"
+                                         converterMessage="Informar somente letras no campo"/>
+
+                            <p:outputLabel value="CEP"/>
+                            <p:inputText size="20" maxlength="30" value="#{cadastroControlador.endereco.cep}"
+                                         required="true"
+                                         requiredMessage="Campo CEP obrigatorio preenchimento"
+                                         converterMessage="Informar somente numeros no campo"/>
+
+                            <p:outputLabel value="Complemento"/>
+                            <p:inputText size="20" maxlength="50" value="#{cadastroControlador.endereco.complemento}"
+                                         required="true"
+                                         requiredMessage="Campo Complemento obrigatorio preenchimento"
+                                         converterMessage="Informar somente letras no campo"/>
+
+                        </h:panelGrid>
+
+                    </p:panel>
+                </p:splitterPanel>
+            </p:splitter>
+        </div>
+
+        <h:panelGrid columns="1">
+            <p:commandButton value="Salvar" actionListener="#{cadastroControlador.salvar()}" update="mensagem"/>
+        </h:panelGrid>
+
     </h:form>
 </h:body>
 </html>

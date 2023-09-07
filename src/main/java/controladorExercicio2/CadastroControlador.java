@@ -1,5 +1,6 @@
 package controladorExercicio2;
 
+import entidades.Endereco;
 import entidades.Pessoa;
 import jakarta.faces.view.ViewScoped;
 import lombok.Data;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Component;
 public class CadastroControlador {
 
     private Pessoa pessoa = new Pessoa();
+    private Endereco endereco = new Endereco();
 
     public void salvar() {
         Messages.addFlashGlobalInfo("Registro salvo com sucesso");
