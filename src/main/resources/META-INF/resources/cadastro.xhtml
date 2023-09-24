@@ -19,101 +19,141 @@
 
         <p:messages id="mensagem" closable="true"/>
 
-        <div class="card">
-            <p:splitter style="height: 300px" styleClass="mb-5">
-                <p:splitterPanel styleClass="flex align-items-center justify-content-center">
 
-                    <p:panel header="Cadastro de Usuario">
+        <p:panel header="Cadastro de Usuario">
 
 
+            <h:panelGrid id="painelCampos" columns="2">
 
-                        <h:panelGrid columns="2">
+                <p:outputLabel value="Código"/>
+                <p:inputText value="#{cadastroControlador.pessoa.codigo}"
+                             readonly="true">
+                </p:inputText>
 
-                            <p:outputLabel value="Código"/>
-                            <p:inputText size="20" maxlength="5" value="#{cadastroControlador.pessoa.codigo}"
-                                         required="true"
-                                         requiredMessage="Campo do código obrigatorio preenchimento"
-                                         converterMessage="Informar somente numero no campo código"/>
+                <p:outputLabel value="Nome"/>
+                <p:inputText size="20" maxlength="50" value="#{cadastroControlador.pessoa.nome}"
+                             required="true"
+                             requiredMessage="Campo nome obrigatorio preenchimento"
+                             converterMessage="Informar somente letras nesse campo"/>
 
-                            <p:outputLabel value="Nome"/>
-                            <p:inputText size="20" maxlength="50" value="#{cadastroControlador.pessoa.nome}"
-                                         required="true"
-                                         requiredMessage="Campo nome obrigatorio preenchimento"
-                                         converterMessage="Informar somente letras nesse campo"/>
+                <p:outputLabel value="CPF"/>
+                <p:inputText size="20" maxlength="50" value="#{cadastroControlador.pessoa.cpf}"
+                             required="true"
+                             requiredMessage="Campo CPF obrigatorio preenchimento"
+                             converterMessage="Informar somente numeros nesse campo"/>
 
-                            <p:outputLabel value="CPF"/>
-                            <p:inputText size="20" maxlength="50" value="#{cadastroControlador.pessoa.cpf}"
-                                         required="true"
-                                         requiredMessage="Campo CPF obrigatorio preenchimento"
-                                         converterMessage="Informar somente numeros nesse campo"/>
-
-                            <p:outputLabel value="Data de Nascimento"/>
-                            <p:inputText size="20" maxlength="50" value="#{cadastroControlador.pessoa.dataNasc}"
-                                         required="true"
-                                         requiredMessage="Campo Data de Nascimento obrigatorio preenchimento"
-                                         converterMessage="Informar somente numeros nesse campo"/>
-                        </h:panelGrid>
-                    </p:panel>
-
-                </p:splitterPanel>
-                <p:splitterPanel styleClass="flex align-items-center justify-content-center">
-
-                    <p:panel header="Endereço">
+                <p:outputLabel value="Data de Nascimento"/>
+                <p:inputText size="20" maxlength="50" value="#{cadastroControlador.pessoa.dataNasc}"
+                             required="true"
+                             requiredMessage="Campo Data de Nascimento obrigatorio preenchimento"
+                             converterMessage="Informar somente numeros nesse campo"/>
+            </h:panelGrid>
+        </p:panel>
 
 
-                        <h:panelGrid columns="2">
+        <p:panel header="Endereço">
 
-                            <p:outputLabel value="Rua"/>
-                            <p:inputText size="20" maxlength="5" value="#{cadastroControlador.endereco.rua}"
-                                         required="true"
-                                         requiredMessage="Campo rua obrigatorio preenchimento"
-                                         converterMessage="Informar somente letras nesse campo"/>
 
-                            <p:outputLabel value="Numero"/>
-                            <p:inputText size="20" maxlength="10" value="#{cadastroControlador.endereco.numero}"
-                                         required="true"
-                                         requiredMessage="Campo numero da rua obrigatorio preenchimento"
-                                         converterMessage="Informar somente numeros nesse campo"/>
+            <h:panelGrid id="painelCampos1" columns="2">
 
-                            <p:outputLabel value="Bairro"/>
-                            <p:inputText size="20" maxlength="30" value="#{cadastroControlador.endereco.bairro}"
-                                         required="true"
-                                         requiredMessage="Campo bairro obrigatorio preenchimento"
-                                         converterMessage=""/>
+                <p:outputLabel value="Rua"/>
+                <p:inputText size="20" maxlength="5" value="#{cadastroControlador.endereco.rua}"
+                             required="true"
+                             requiredMessage="Campo rua obrigatorio preenchimento"
+                             converterMessage="Informar somente letras nesse campo"/>
 
-                            <p:outputLabel value="Cidade"/>
-                            <p:inputText size="20" maxlength="40" value="#{cadastroControlador.endereco.cidade}"
-                                         required="true"
-                                         requiredMessage="Campo cidade obrigatorio preenchimento"
-                                         converterMessage="Informar somente letras no campo"/>
+                <p:outputLabel value="Numero"/>
+                <p:inputText size="20" maxlength="10" value="#{cadastroControlador.endereco.numero}"
+                             required="true"
+                             requiredMessage="Campo numero da rua obrigatorio preenchimento"
+                             converterMessage="Informar somente numeros nesse campo"/>
 
-                            <p:outputLabel value="UF"/>
-                            <p:inputText size="20" maxlength="15" value="#{cadastroControlador.endereco.uf}"
-                                         required="true"
-                                         requiredMessage="Campo UF obrigatorio preenchimento"
-                                         converterMessage="Informar somente letras no campo"/>
+                <p:outputLabel value="Bairro"/>
+                <p:inputText size="20" maxlength="30" value="#{cadastroControlador.endereco.bairro}"
+                             required="true"
+                             requiredMessage="Campo bairro obrigatorio preenchimento"
+                             converterMessage=""/>
 
-                            <p:outputLabel value="CEP"/>
-                            <p:inputText size="20" maxlength="30" value="#{cadastroControlador.endereco.cep}"
-                                         required="true"
-                                         requiredMessage="Campo CEP obrigatorio preenchimento"
-                                         converterMessage="Informar somente numeros no campo"/>
+                <p:outputLabel value="Cidade"/>
+                <p:inputText size="20" maxlength="40" value="#{cadastroControlador.endereco.cidade}"
+                             required="true"
+                             requiredMessage="Campo cidade obrigatorio preenchimento"
+                             converterMessage="Informar somente letras no campo"/>
 
-                            <p:outputLabel value="Complemento"/>
-                            <p:inputText size="20" maxlength="50" value="#{cadastroControlador.endereco.complemento}"
-                                         required="true"
-                                         requiredMessage="Campo Complemento obrigatorio preenchimento"
-                                         converterMessage="Informar somente letras no campo"/>
+                <p:outputLabel value="UF"/>
+                <p:inputText size="20" maxlength="15" value="#{cadastroControlador.endereco.uf}"
+                             required="true"
+                             requiredMessage="Campo UF obrigatorio preenchimento"
+                             converterMessage="Informar somente letras no campo"/>
 
-                        </h:panelGrid>
+                <p:outputLabel value="CEP"/>
+                <p:inputText size="20" maxlength="30" value="#{cadastroControlador.endereco.cep}"
+                             required="true"
+                             requiredMessage="Campo CEP obrigatorio preenchimento"
+                             converterMessage="Informar somente numeros no campo"/>
 
-                    </p:panel>
-                </p:splitterPanel>
-            </p:splitter>
-        </div>
+                <p:outputLabel value="Complemento"/>
+                <p:inputText size="20" maxlength="50" value="#{cadastroControlador.endereco.complemento}"
+                             required="true"
+                             requiredMessage="Campo Complemento obrigatorio preenchimento"
+                             converterMessage="Informar somente letras no campo"/>
+
+            </h:panelGrid>
+
+            <p:panel header="Lançamento Carro">
+
+                <h:panelGrid id="painelCampos2" columns="2">
+
+                    <p:outputLabel value="Código"/>
+                    <p:inputText value="#{cadastroControlador.carro.codigo}"
+                                 readonly="true">
+                    </p:inputText>
+
+                    <p:outputLabel value="Marca"/>
+                    <p:inputText size="20" maxlength="40" value="#{cadastroControlador.carro.marca}"
+                                 required="true"
+                                 requiredMessage="Campo marca obrigatorio preenchimento"
+                                 converterMessage=""/>
+
+                    <p:outputLabel value="Modelo"/>
+                    <p:inputText size="20" maxlength="40" value="#{cadastroControlador.carro.marca}"
+                                 required="true"
+                                 requiredMessage="Campo modelo é obrigatorio preenchimento"
+                                 converterMessage=""/>
+
+
+                    <p:outputLabel value="Ano de Fabricação"/>
+                    <p:inputText size="20" maxlength="10" value="#{cadastroControlador.carro.anoFabricao}"
+                                 required="true"
+                                 requiredMessage="Campo ano de fabricação obrigatorio preenchimento"
+                                 converterMessage="Informar somente numeros nesse campo"/>
+
+
+                    <p:outputLabel value="Ano do Modelo"/>
+                    <p:inputText size="20" maxlength="10" value="#{cadastroControlador.carro.anoModelo}"
+                                 required="true"
+                                 requiredMessage="Campo ano do modelo obrigatorio preenchimento"
+                                 converterMessage="Informar somente numeros nesse campo"/>
+
+                    <p:outputLabel value="Valor"/>
+                    <p:inputText size="20" maxlength="10" value="#{cadastroControlador.carro.valor}"
+                                 required="true"
+                                 requiredMessage="Campo valor obrigatorio preenchimento"
+                                 converterMessage="Informar somente numeros nesse campo"/>
+
+
+                </h:panelGrid>
+
+
+            </p:panel>
+
+
+        </p:panel>
+
 
         <h:panelGrid columns="1">
-            <p:commandButton value="Salvar" actionListener="#{cadastroControlador.salvar()}" update="mensagem"/>
+            <p:commandButton value="Salvar" actionListener="#{cadastroControlador.salvar()}"
+                             update="mensagem painelCampos painelCampos1 painelCampos2"/>
         </h:panelGrid>
 
     </h:form>
